@@ -20,7 +20,7 @@ st.set_page_config(
 # -------------------------------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\dbila\Project_5.1\Project_2_NovaMart\Output\novamart_clean.csv")
+    df = pd.read_csv("novamart_clean.csv")
 
     # Standardize column names
     df.columns = (
@@ -96,7 +96,7 @@ try:
     df = load_data()
 except FileNotFoundError:
     st.error(
-        "The file data/novamart_clean.csv was not found. "
+        "The file novamart_clean.csv was not found. "
         "Run 01_data_prep.ipynb first."
     )
     st.stop()
